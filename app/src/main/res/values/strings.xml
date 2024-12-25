@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Rick and morty</string>
+
+    <string name="placeHolder_characterName">Name: %1$s</string>
+    <string name="placeHolder_characterOrigin">Origin: %1$s</string>
+    <string name="placeHolder_episodeName">Name: %1$s</string>
+</resources>

@@ -3,14 +3,14 @@ package com.mhd.rickandmorty.data
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.mhd.rickandmorty.data.network.ApiService
-import com.mhd.rickandmorty.data.network.response.EpisodePagingResponse
+import com.mhd.rickandmorty.data.network.response.EpisodesPagingResponse
 import javax.inject.Inject
 
 class EpisodesPagingSource @Inject constructor(
     private val apiService: ApiService
-) : PagingSource<Int, EpisodePagingResponse.Episode>() {
+) : PagingSource<Int, EpisodesPagingResponse.Episode>() {
 
-    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, EpisodePagingResponse.Episode> {
+    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, EpisodesPagingResponse.Episode> {
         return try {
             val nextPageNumber = params.key ?: 1
             val response = apiService.getEpisodes(nextPageNumber)
@@ -24,7 +24,7 @@ class EpisodesPagingSource @Inject constructor(
         }
     }
 
-    override fun getRefreshKey(state: PagingState<Int, EpisodePagingResponse.Episode>): Int? {
+    override fun getRefreshKey(state: PagingState<Int, EpisodesPagingResponse.Episode>): Int? {
         return state.anchorPosition?.let { anchorPosition ->
             state.closestPageToPosition(anchorPosition)
         }?.let { anchorPage ->

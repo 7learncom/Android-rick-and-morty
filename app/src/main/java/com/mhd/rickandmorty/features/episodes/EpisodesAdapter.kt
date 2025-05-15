@@ -5,11 +5,11 @@ import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.mhd.rickandmorty.data.network.response.EpisodePagingResponse
+import com.mhd.rickandmorty.data.network.response.EpisodesPagingResponse
 import com.mhd.rickandmorty.databinding.ItemEpisodeBinding
 
 class EpisodesAdapter :
-    PagingDataAdapter<EpisodePagingResponse.Episode, EpisodesAdapter.EpisodeViewHolder>(
+    PagingDataAdapter<EpisodesPagingResponse.Episode, EpisodesAdapter.EpisodeViewHolder>(
         EpisodeComparator
     ) {
 
@@ -30,7 +30,7 @@ class EpisodesAdapter :
         private val binding: ItemEpisodeBinding
     ) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(episode: EpisodePagingResponse.Episode) {
+        fun bind(episode: EpisodesPagingResponse.Episode) {
             binding.tvName.text = episode.name
             binding.tvAirDate.text = episode.airDate
             binding.tvSeasonEpisode.text = episode.episode
@@ -39,17 +39,17 @@ class EpisodesAdapter :
 
 }
 
-object EpisodeComparator : DiffUtil.ItemCallback<EpisodePagingResponse.Episode>() {
+object EpisodeComparator : DiffUtil.ItemCallback<EpisodesPagingResponse.Episode>() {
     override fun areItemsTheSame(
-        oldItem: EpisodePagingResponse.Episode,
-        newItem: EpisodePagingResponse.Episode
+        oldItem: EpisodesPagingResponse.Episode,
+        newItem: EpisodesPagingResponse.Episode
     ): Boolean {
         return oldItem.id == newItem.id
     }
 
     override fun areContentsTheSame(
-        oldItem: EpisodePagingResponse.Episode,
-        newItem: EpisodePagingResponse.Episode
+        oldItem: EpisodesPagingResponse.Episode,
+        newItem: EpisodesPagingResponse.Episode
     ): Boolean {
         return oldItem == newItem
     }

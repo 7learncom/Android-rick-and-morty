@@ -22,4 +22,10 @@
         android:name="com.mhd.rickandmorty.features.episodes.EpisodesFragment"
         android:label="EpisodesFragment"
         tools:layout="@layout/fragment_episodes" />
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.mhd.rickandmorty.features.settings.SettingsFragment"
+        android:label="SettingsFragment"
+        tools:layout="@layout/fragment_settings" />
 </navigation>

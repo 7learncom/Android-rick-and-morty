@@ -16,4 +16,9 @@
         android:icon="@drawable/selector_movie_bottom_navigation"
         android:title="Episodes" />
 
+    <item
+        android:id="@+id/settingsFragment"
+        android:icon="@drawable/ic_settings"
+        android:title="Settings" />
+
 </menu>

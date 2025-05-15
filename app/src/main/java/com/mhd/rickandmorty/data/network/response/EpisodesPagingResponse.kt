@@ -3,7 +3,7 @@ package com.mhd.rickandmorty.data.network.response
 
 import com.google.gson.annotations.SerializedName
 
-data class EpisodePagingResponse(
+data class EpisodesPagingResponse(
     @SerializedName("info")
     val pagingInfo: PagingInfo,
     @SerializedName("results")

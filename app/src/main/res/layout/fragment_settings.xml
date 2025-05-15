@@ -16,7 +16,7 @@
             android:layout_height="match_parent"
             android:background="?attr/colorPrimary"
             android:gravity="center"
-            android:text="Srttings"
+            android:text="Settings"
             android:textColor="?attr/colorOnPrimary"
             android:textSize="16sp" />
     </com.google.android.material.card.MaterialCardView>
